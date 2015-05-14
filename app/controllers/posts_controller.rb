@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, only: [:show, :edit, :update, :destroy,:confirm,:ignore]
   before_action :authenticate_user!,except: [:index,:show]
   include Com::Commentable
   # GET /posts
@@ -17,7 +17,18 @@ class PostsController < ApplicationController
   # GET /posts/1.json
   def show
   end
-
+  def confirm
+    @post[:confirm] = true
+    @post[:ignore] = false
+    @post.save
+  redirect_to admin_posts_path
+  end
+  def ignore
+    @post[:ignore] = true
+    @post[:confirm] = false
+    @post.save
+    redirect_to admin_posts_path
+  end
   # GET /posts/new
   def new
     @post = Post.new
@@ -75,6 +86,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :description, :body)
+      params.require(:post).permit(:title, :description, :body,:confirm,:ignore)
     end
 end
