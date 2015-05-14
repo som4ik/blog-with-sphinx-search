@@ -7,6 +7,9 @@
       %ul
         - @post.errors.full_messages.each do |message|
           %li= message
+  -for category in Category.all 
+    = check_box_tag "post[category_ids][]", category.id, @post.categories.include?(category) 
+    = category.name 
   .field
     = f.label :title
     %br/

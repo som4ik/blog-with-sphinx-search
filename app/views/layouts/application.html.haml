@@ -11,5 +11,6 @@
       = notice
     %p.alert
       = alert 
-
+    - Category.all.each do |c| 
+      %li= link_to c.name, posts_path(c) 
     = yield
