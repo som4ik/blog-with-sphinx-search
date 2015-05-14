@@ -21,7 +21,11 @@ gem 'jquery-rails'
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
-
+gem 'redactor-rails', '~>0.4.5'
+gem "carrierwave"
+gem "mini_magick"
+gem 'activeadmin', github: 'activeadmin'
+gem 'kaminari', '~> 0.16.3'
 #pagination 
 gem 'will_paginate-bootstrap', '~> 1.0.1'
 gem 'will_paginate','~> 3.0.pre4'
