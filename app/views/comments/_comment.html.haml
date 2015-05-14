@@ -1,0 +1,13 @@
+.commentdiv
+  %h5 
+    %strong 
+      = comment.commenter 
+    %small
+      = comment.created_at.strftime('%b %d, %Y at %H:%M') 
+    %br/
+    = comment.content
+   
+  .actions
+    -if comment.depth <6
+      = link_to "Reply", new_polymorphic_path([@commentable, Comment.new], :parent_id => comment),:class=>"btn btn-default btn-xs family"
+= nested_comments comment.children
