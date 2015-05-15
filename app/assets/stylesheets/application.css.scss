@@ -62,7 +62,7 @@ margin: 0;
 .head_bottons{
 float: right;
 margin-right: 20px;
-margin-top:10px; 
+margin-top:5px; 
 }
 .position{
 	margin-left: 20%;
@@ -82,7 +82,20 @@ margin-top:10px;
 	-webkit-box-shadow: 0px 0px 2px 4px rgba(207,174,207,1);
 	-moz-box-shadow: 0px 0px 2px 4px rgba(207,174,207,1);
 	box-shadow: 0px 0px 2px 4px rgba(207,174,207,1);
-	padding: 10px;
+	padding: 5px 0px 10px 30px;
+	margin-bottom: 10px;
+}
+.alert{
+	width: 70%;
+	background-color:#C8D0E6;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	border: 1px solid #C8D0E6;
+	border-radius: 10px 10px 10px 10px;
+	-webkit-box-shadow: 0px 0px 2px 4px rgba(207,174,207,1);
+	-moz-box-shadow: 0px 0px 2px 4px rgba(207,174,207,1);
+	box-shadow: 0px 0px 2px 4px rgba(207,174,207,1);
+	padding: 5px 0px 10px 30px;
 	margin-bottom: 10px;
 }
 .commentdiv{
@@ -128,4 +141,18 @@ word-wrap: break-word;
 }
 .tex{
 	margin-left: 25%;
+}
+.avatarnav{
+	width:40px;
+	height: 40px;
+	border: 0px solid #000000;
+	border-radius: 10em;
+	margin-right: 10px;
+}
+.ava{
+	width:100px;
+	height: 100px;
+	border: 0px solid #000000;
+	border-radius: 10em;
+	margin-right: 10px;
 }

@@ -10,9 +10,10 @@
     -Category.all.each do |c| 
       %li= link_to c.name, posts_path(c)
 
-      
+    
   .head_bottons
     -if user_signed_in?
+      = image_tag current_user.avatar_url ,:class=>"avatarnav"  
       .btn-group
         %button.btn.btn-default.dropdown-toggle{type: "button", "data-toggle"=> "dropdown","aria-expanded"=>"false"}
           = current_user.username  

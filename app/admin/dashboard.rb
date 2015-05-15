@@ -18,7 +18,7 @@ ActiveAdmin.register_page "Dashboard" do
     tr do
         th Post.count
         th User.count
-        th User.count(:conditions => "created_at => Time.now -1.days")
+        th User.where("created_at >=?",1.day.ago).count
     end
   end
 end

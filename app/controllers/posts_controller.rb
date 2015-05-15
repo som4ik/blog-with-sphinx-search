@@ -6,9 +6,9 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     if params[:format]
-      @posts = Category.find(params[:format]).posts.order('created_at DESC').paginate(:page => params[:page], :per_page => 6)
+      @posts = Category.find(params[:format]).posts.where(:confirm =>true).order('created_at DESC').paginate(:page => params[:page], :per_page => 6)
     else
-      @posts = Post.order('created_at DESC').paginate(:page => params[:page], :per_page => 6)
+      @posts = Post.order('created_at DESC').where(:confirm =>true).paginate(:page => params[:page], :per_page => 6)
     end
     @categories = Category.all
   end
@@ -49,7 +49,7 @@ class PostsController < ApplicationController
     respond_to do |format|
       if @post.save
         
-        format.html { redirect_to @post, notice: 'Post was successfully created.' }
+        format.html { redirect_to posts_path, notice: 'Post was successfully created ,Waiting for Admin confirmation' }
         format.json { render :show, status: :created, location: @post }
       else
         format.html { render :new }

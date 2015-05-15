@@ -2,7 +2,7 @@
   .post
     .row
       .col-md-2
-        / = image_tag post.user.avatar_url ,:class=>"avatarp"
+        = image_tag post.user.avatar_url ,:class=>"ava"
       .col-md-8
         %h3= link_to post.title, post
         %h5= post.description
