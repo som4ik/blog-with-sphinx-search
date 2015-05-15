@@ -22,7 +22,7 @@ class PostsController < ApplicationController
     @post[:ignore] = false
     @user = @post.user
     @post.save
-    UserMailer.new_post_email(@post,@user).deliver
+    # UserMailer.new_post_email(@post,@user).deliver
   redirect_to admin_posts_path
   end
   def ignore
