@@ -1,0 +1,27 @@
+%h3  
+  = image_tag @user.avatar.url,:class => "ava"
+  = @user.username
+  = @user.email
+  %h5 joind the news blog #{time_ago_in_words(@user.created_at.time)} ago
+%p  #{@user.username} posted #{@user.posts.count} posts:
+%ul
+  - @user.posts.each do |p|
+    %li
+      = link_to p.title , post_path(p[:id])
+      related with 
+      - p.categories.each do |c|
+        = c.name 
+      have
+      = p.comments.count
+      comments
+      -if p[:confirm] == false
+        not confirmed yet :( 
+      -else 
+        confirmed
+%p #{@user.username} commented #{@user.comments.count}
+-if current_user.id == @user.id
+  asdjasdjaskljljkdas
+  - @user.categories.each do |category|
+    = category.name
+  = render 'form'
+  

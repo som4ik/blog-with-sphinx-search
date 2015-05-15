@@ -14,7 +14,7 @@ def new
     @user = current_user
     @commentable = find_commentable
     @comment = @commentable.comments.build(comment_params)
-    
+    @comment.user_id = current_user.id
     if @comment.save
         flash[:notice] = "Comment added succsefully"
         redirect_to @commentable
@@ -30,7 +30,7 @@ def new
   private
  
       def comment_params
-      params.require(:comment).permit(:commenter,:content,:parent_id, :commentable_id, :commentable_type)
+      params.require(:comment).permit(:commenter,:content,:parent_id, :commentable_id, :commentable_type,:user_id)
     end
      def find_commentable
        params.each do |name, value|

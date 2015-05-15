@@ -8,9 +8,8 @@
         %h5= post.description
         %small
           Posted by 
-          = post.user.username
+          = link_to post.user.username,user_path(post.user[:id])
           = time_ago_in_words(post.created_at)
-          = post.comments.count
       .col-md-2
         -if post.comments.count != 0
           .comtext

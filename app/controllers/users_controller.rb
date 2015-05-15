@@ -1,12 +1,16 @@
 class UsersController < ApplicationController
 before_filter :authenticate_user!
-include Com::Commentable
+
   def index
-    @users = current_user
+    @users = User.all 
   end
+  def show 
+    @user = User.find(params[:id])
+  end
+
   def update 
   	@user = current_user.id
-  	params[:product][:category_ids] ||= []
+  	params[:user][:category_ids] ||= []
   	if @user.update(user_params)
   		flash[:success] = "Profile updated."
   		redirect_to @user
@@ -14,12 +18,21 @@ include Com::Commentable
   		render 'edit'
   	end
   end 
-  def show
-    @user = User.find(params[:id])
-    unless @user == current_user
-      redirect_to :back, :alert => "Access denied."
+  def info_stop
+    @user = current_user
+    if @user[:info_stop]
+      @user[:info_stop] = false 
+      @user.save
+      flash[:notice] = "Mail servece OFF"
+    else 
+      @user[:info_stop] = true
+      @user.save
+      flash[:notice] = "Mail servece ON"
     end
+    redirect_to user_path(current_user[:id])
   end
+  
+  
 private
 def sign_up_params
   params.require(:user).permit( :username,:email, :password, :password_confirmation, :current_password, :avatar, :avatar_cache )
@@ -27,6 +40,6 @@ def sign_up_params
 
 end
 def account_update_params
-params.require(:user).permit( :username,:email, :password, :password_confirmation, :current_password,{category_ids:[]}, :avatar, :avatar_cache )
+params.require(:user).permit( :username,:email, :password, :password_confirmation, :current_password,{category_ids:[]}, :avatar, :avatar_cache,:info_stop )
 end
 end
