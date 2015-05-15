@@ -6,11 +6,11 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
+
   %body
-    %p.notice
-      = notice
-    %p.alert
-      = alert 
-    - Category.all.each do |c| 
-      %li= link_to c.name, posts_path(c) 
-    = yield
+  
+    = render 'layouts/header'
+
+    
+    %div.main_content
+      = yield

@@ -14,4 +14,14 @@
 //= require jquery_ujs
 //= require redactor-rails
 //= require turbolinks
+//= require bootstrap-sprockets
 //= require_tree .
+ $(document).ready(function(){
+                setTimeout(function(){
+                    $('#notice_wrapper').fadeOut("slow",function(){
+                        $(this).remove();
+                    })
+                },1500)
+
+
+            });

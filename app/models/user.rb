@@ -12,7 +12,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 attr_accessor :login
-
+  after_create :welcome_message
+  
 
 
 def self.find_for_database_authentication(warden_conditions)
@@ -28,4 +29,11 @@ def self.find_for_database_authentication(warden_conditions)
   end
 
 end
+
+private
+  def welcome_message
+   UserMailer.welcome_email(self).deliver
+   
+  end
+
 end

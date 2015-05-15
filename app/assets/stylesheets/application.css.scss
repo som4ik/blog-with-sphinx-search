@@ -1,0 +1,131 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require redactor-rails
+ *= require_self
+ */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+body {
+
+background-color:#533566 ;
+
+}
+.head{
+width: 100%;
+background-color: white;
+height: 50px;
+}
+#notice_wrapper{
+		
+position: absolute;
+top: 0px;
+width: 100%;
+z-index: 444;
+background-color:#D0D0D0;
+height: 52px;
+
+.notice, .alert{
+margin: 0;
+    padding: 1.75rem 0;
+    text-align: center;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+}
+.main_content {
+	margin: auto auto;
+	margin-top: 20px;
+	margin-bottom: 400px;
+	width:80%;
+	height: auto;
+	background-color:white;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	border: 0px solid #000000;
+	border-radius: 10px 10px 10px 10px;
+	-webkit-box-shadow: 0px 0px 2px 4px rgba(207,174,207,1);
+	-moz-box-shadow: 0px 0px 2px 4px rgba(207,174,207,1);
+	box-shadow: 0px 0px 2px 4px rgba(207,174,207,1);
+	padding: 10px;
+}
+.head_bottons{
+float: right;
+margin-right: 20px;
+margin-top:10px; 
+}
+.position{
+	margin-left: 20%;
+}
+.sitename{
+	float: left;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+#error_explanation{
+	width: 70%;
+	background-color:#C8D0E6;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+	border: 1px solid #C8D0E6;
+	border-radius: 10px 10px 10px 10px;
+	-webkit-box-shadow: 0px 0px 2px 4px rgba(207,174,207,1);
+	-moz-box-shadow: 0px 0px 2px 4px rgba(207,174,207,1);
+	box-shadow: 0px 0px 2px 4px rgba(207,174,207,1);
+	padding: 10px;
+	margin-bottom: 10px;
+}
+.commentdiv{
+	margin: auto auto;
+	margin-bottom: 15px;
+	border-radius: 0px 20px 20px 20px;
+-moz-border-radius: 0px 20px 20px 20px;
+-webkit-border-radius: 0px 20px 20px 20px;
+border: 2px solid #ffccff;
+width:60%;
+height:auto;
+background-color:white;
+	padding:2px 0px 5px 15px;
+	-webkit-box-shadow: 2px 0px 8px 1px rgba(171,159,189,0.48);
+-moz-box-shadow: 2px 0px 8px 1px rgba(171,159,189,0.48);
+box-shadow: 2px 0px 8px 1px rgba(171,159,189,0.48);
+word-wrap: break-word; 
+
+}
+.col-md-offset-1{
+	margin-left: 2%;
+	margin-right: 2%;
+overflow: hidden;
+text-overflow: ellipsis;
+word-wrap: break-word; 
+}
+.title{
+	padding: 10px;
+}
+.description {
+	padding-left: 10px;
+}
+.post {
+	width: 90%;
+	margin: auto auto ;
+	border-bottom: 1px solid #ffccff;
+	margin-bottom: 5px;
+	padding-bottom: 10px;
+}
+.pagin {
+	margin-left:35%;
+	margin-top:15px;
+}
+.tex{
+	margin-left: 25%;
+}

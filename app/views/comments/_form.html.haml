@@ -1,11 +1,19 @@
 
 = form_for [@commentable, @comment] do |f|
+  - if @comment.errors.any?
+    #error_explanation
+      %h4
+        = pluralize(@comment.errors.count, "error")
+        prohibited this post from being saved:
+      %ul
+        - @comment.errors.full_messages.each do |message|
+          %li= message
   = f.hidden_field :parent_id
   - if user_signed_in?
     = f.hidden_field :commenter ,:value=>"#{current_user.username}"
 
     %p.family
-      = f.label :Content
+      = f.label "Comment"
       %br/
       = f.text_area :content, :rows => 4
     %p.family
@@ -21,9 +29,9 @@
       %br/
       = f.text_field :commenter
     %p.family
-      = f.label :Content
+      = f.label "Comment"
       %br/
-      = f.text_area :content, :rows => 4
+      = f.text_area :content, :rows => 15
     %p.family
       -if @comment.parent
         = f.submit "Reply",:class=>"btn btn-primary btn-xs"

@@ -10,15 +10,20 @@ def new
   end
   
   def create
-    #@post = Post.find(params[:id])
+    # @post = Post.find(params[:id])
     @user = current_user
     @commentable = find_commentable
     @comment = @commentable.comments.build(comment_params)
-     @comment.save
-      
-      redirect_to @commentable
-      
     
+    if @comment.save
+        flash[:notice] = "Comment added succsefully"
+        redirect_to @commentable
+    else 
+         flash[:alert] = "Can`t add empty comment"
+         redirect_to @commentable
+    
+      
+    end
     
   end
  

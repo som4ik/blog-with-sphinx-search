@@ -1,9 +1,30 @@
-%p#notice= notice
-- @posts.each do |post|
-  = post.title
-  = post.description
-  = link_to 'Show', post
-  = link_to 'Edit', edit_post_path(post)
-  = link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }
+- @posts.each do |post|    
+  .post
+    .row
+      .col-md-2
+        / = image_tag post.user.avatar_url ,:class=>"avatarp"
+      .col-md-8
+        %h3= link_to post.title, post
+        %h5= post.description
+        %small
+          Posted by 
+          = post.user.username
+          = time_ago_in_words(post.created_at)
+          = post.comments.count
+      .col-md-2
+        -if post.comments.count != 0
+          .comtext
+            %br
+            %br
+            .tex
+              = post.comments.count
+            
+            %h5 Comments
+        -else 
+          %br
+          %br
+          %h5 No comments yet
+
 %br/
-= link_to 'New Post', new_post_path
+
+= will_paginate @posts ,:renderer=> "BootstrapPagination::Rails" ,:class=>"pagin"

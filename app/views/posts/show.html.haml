@@ -1,12 +1,9 @@
 %p#notice= notice
-%p
-  %strong Title:
+%h3.title
   = @post.title
-%p
-  %strong Description:
+%h5.description
   = @post.description
 %p
-  %strong Body:
   = @post.body.html_safe
 = link_to 'Edit', edit_post_path(@post)
 |
