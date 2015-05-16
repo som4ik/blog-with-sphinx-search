@@ -274,7 +274,6 @@ DEPENDENCIES
   pg
   rails (= 4.2.1)
   redactor-rails (~> 0.4.5)
-  redis (~> 3.2.1)
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   seed_dump (~> 3.2.2)
