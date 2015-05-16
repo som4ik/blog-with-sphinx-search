@@ -25,6 +25,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'redactor-rails', '~>0.4.5'
 gem 'sidekiq', '~> 3.3.4'
+gem 'redis', '~> 3.2.1'
 gem 'figaro', '~> 1.1.1'
 gem "carrierwave"
 gem "mini_magick"
