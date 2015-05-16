@@ -9,7 +9,7 @@ Rails.application.configure do
            :user_name            => 'app36846898@heroku.com',
            :password             => '4dmmpyzg8146',
            :authentication       => 'plain'
-           #:enable_starttls_auto => true  
+           :enable_starttls_auto => true  
         }
   config.action_mailer.raise_delivery_errors = true
   # Code is not reloaded between requests.
