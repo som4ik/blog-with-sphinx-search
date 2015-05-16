@@ -6,11 +6,12 @@
   <body>
     <h1>New Post added by  <%= @post.user.username %></h1>
     <p>
-      You can check the post here <%= post_url(@post)%><br>
+      You can check the post here <%= link_to @post.title, post_url(@post)%><br>
     </p>
     <p>
       Stop notifications .
     </p>
     <p>Thanks for joining and have a great day!</p>
+    <p>to stop the mail notifications click here : <%= link_to "Stop Mailing me ",info_stop_user_path%></p>
   </body>
 </html>

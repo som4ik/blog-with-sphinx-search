@@ -10,7 +10,7 @@ def new
   end
   
   def create
-    # @post = Post.find(params[:id])
+    
     @user = current_user
     @commentable = find_commentable
     @comment = @commentable.comments.build(comment_params)
