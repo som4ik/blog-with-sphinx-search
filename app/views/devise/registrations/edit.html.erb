@@ -5,10 +5,12 @@
   <div>
     <%= image_tag current_user.avatar_url ,:class=>"ava"%>
   </div>
+
   <div >
   <%= f.file_field :avatar%>
   <%= f.hidden_field :avatar_cache%>
   </div>
+
 <div class="form-group">
     <%= f.label :username %><br />
     <%= f.text_field :username, autofocus: true,:class =>'form-control' %>
@@ -17,7 +19,20 @@
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true ,:class =>'form-control'%>
   </div>
+   <div class ="field">
+  <p>Post categories that you want to be inform about :</p>
+  <% for category in Category.all %> 
+        <div> 
 
+          <%= check_box_tag "user[category_ids][]", category.id, @user.categories.include?(category) %> 
+          <%= category.name %> 
+        </div> 
+    <% end %>
+</div>
+<div>
+  <%= f.label :stop_mailing_service %>
+  <%= f.check_box :info_stop%>
+</div>
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>

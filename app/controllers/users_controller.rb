@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-before_filter :authenticate_user!
+before_filter :authenticate_user!,except: [:info_stop]
 
   def index
     @users = User.all 
@@ -19,27 +19,18 @@ before_filter :authenticate_user!
   	end
   end 
   def info_stop
-    @user = current_user
+    @user = User.find(params[:id])
     if @user[:info_stop]
-      @user[:info_stop] = false 
-      @user.save
-      flash[:notice] = "Mail servece OFF"
+       @user[:info_stop] = false 
+       @user.save
+       flash[:notice] = "Mail servece OFF"
     else 
-      @user[:info_stop] = true
-      @user.save
-      flash[:notice] = "Mail servece ON"
+       @user[:info_stop] = true
+       @user.save
+       flash[:notice] = "Mail servece ON"
     end
-    redirect_to user_path(current_user[:id])
+    redirect_to posts_path
   end
   
-  
-private
-def sign_up_params
-  params.require(:user).permit( :username,:email, :password, :password_confirmation, :current_password, :avatar, :avatar_cache )
-
-
-end
-def account_update_params
-params.require(:user).permit( :username,:email, :password, :password_confirmation, :current_password,{category_ids:[]}, :avatar, :avatar_cache,:info_stop )
-end
+ 
 end

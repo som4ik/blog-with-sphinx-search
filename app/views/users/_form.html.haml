@@ -2,3 +2,6 @@
   = link_to "Stop email Information",info_stop_user_path
 -else 
   = link_to "Trun on email Information",info_stop_user_path
+%br
+- @user.categories.each do |category|
+  = category.name 

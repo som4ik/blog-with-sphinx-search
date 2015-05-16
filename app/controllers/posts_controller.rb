@@ -18,11 +18,17 @@ class PostsController < ApplicationController
   def show
   end
   def confirm
+    @users = User.where(:info_stop => true)
     @post[:confirm] = true
     @post[:ignore] = false
     @user = @post.user
     @post.save
-    UserMailer.new_post_email(@post,@user).deliver
+    @users.each do |u|
+      if (u.category_ids&@post.category_ids)!=[]
+        MailsWorker.perform_async(@post.id,u.id)
+        # UserMailer.new_post_email(@post,u).deliver
+      end
+    end
   redirect_to admin_posts_path
   end
   def ignore
