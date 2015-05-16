@@ -3,13 +3,13 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'www.somarnewsblog.herokuapp.com' }
        config.action_mailer.delivery_method = :smtp
        config.action_mailer.smtp_settings = {
-           :address              => "smtp.sendgrid.net",
+           :address              => 'smtp.sendgrid.net',
            :port                 => '587',
            :domain               => 'heroku.com',
-           :user_name            => 'app36846898@heroku.com',
-           :password             => '4dmmpyzg8146',
+           :user_name            => ENV['app36846898@heroku.com'],
+           :password             => ENV['4dmmpyzg8146'],
            :authentication       => 'plain'
-           :enable_starttls_auto => true  
+           #:enable_starttls_auto => true  
         }
   config.action_mailer.raise_delivery_errors = true
   # Code is not reloaded between requests.
