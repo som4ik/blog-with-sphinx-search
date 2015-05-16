@@ -1,8 +1,8 @@
 class User < ActiveRecord::Base
    mount_uploader :avatar, AvatarUploader
-  has_many :posts
+  has_many :posts, dependent: :destroy
   has_and_belongs_to_many :categories
-  has_many :comments
+  has_many :comments, dependent: :destroy
 		validates :username,
   :presence => true,
   :uniqueness => {

@@ -1,7 +1,13 @@
--if @user.info_stop
-  = link_to "Stop email Information",info_stop_user_path
--else 
-  = link_to "Trun on email Information",info_stop_user_path
-%br
-- @user.categories.each do |category|
-  = category.name 
+-if @user.posts.count!=0
+  .panel.panel-default
+    / Default panel contents
+    .panel-heading #{@user.username} posts:
+    .panel-body
+      %ul.list-group
+      - @user.posts.each do |p|
+        %li.list-group-item
+          %b= link_to p.title , post_path(p[:id])
+          - p.categories.each do |c|
+            %span{:class=>'badge cats' }= c.name 
+          %span.badge Comments #{p.comments.count}
+          %span.badge Confirmed #{p.confirm}
