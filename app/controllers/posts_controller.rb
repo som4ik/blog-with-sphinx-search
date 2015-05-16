@@ -22,7 +22,7 @@ class PostsController < ApplicationController
     @post[:ignore] = false
     @user = @post.user
     @post.save
-    # UserMailer.new_post_email(@post,@user).deliver
+    UserMailer.new_post_email(@post,@user).deliver
   redirect_to admin_posts_path
   end
   def ignore
@@ -61,9 +61,10 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
   def update
+    @post[:confirm]= false
     respond_to do |format|
       if @post.update(post_params)
-        format.html { redirect_to @post, notice: 'Post was successfully updated.' }
+        format.html { redirect_to @post, notice: 'Post was successfully updated.Waiting Admin confirm' }
         format.json { render :show, status: :ok, location: @post }
       else
         format.html { render :edit }
