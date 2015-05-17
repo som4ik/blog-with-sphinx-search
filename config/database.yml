@@ -5,15 +5,15 @@ default: &default
 
 development:
   <<: *default
-  database: asd_delopment
+  database: somartestingapp_delopment
 
 
 test:
   <<: *default
-  database: asd_est
+  database: somartestingapp_test
 
 production:
   <<: *default
-  database: test_blog_production
-  username: asd
+  database: somartestingapp_production
+  username: somartestingapp
   password: <%= ENV['ASD_DATABASE_PASSWORD'] %>
