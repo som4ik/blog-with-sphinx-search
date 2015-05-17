@@ -2,8 +2,8 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: 5
-  # username: somar
-  # password: jamalm1990
+  username: somar
+  password: jamalm1990
 
 development:
   <<: *default
@@ -15,4 +15,4 @@ test:
 production:
   database: news_blog_pro
   <<: *default
- password: <%= ENV['NEWS_BLOG_DATABASE_PASSWORD'] %>
+  # password: <%= ENV['NEWS_BLOG_DATABASE_PASSWORD'] %>
