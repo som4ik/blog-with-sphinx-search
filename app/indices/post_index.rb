@@ -1,9 +1,9 @@
-ThinkingSphinx::Index.define :post, :with => :active_record do
+ThinkingSphinx::Index.define :post, :with => :real_time do
    indexes title, :sortable => true
    indexes body
-   indexes user.id,       :as => :user,     :sortable => true
-  	 # has confirm,:type => :boolean
-  	 # has created_at
+   has user.id, :type=>:integer,     :as => :user,     :sortable => true
+   # has confirm,:type => :boolean
+   has created_at,:type => :timestamp
 
 
   
