@@ -26,10 +26,10 @@ gem 'jbuilder', '~> 2.0'
 gem 'redactor-rails', '~>0.4.5'
 gem 'sidekiq', '~> 3.3.4'
 #Sphinx 
-# gem 'mysql2',          '~> 0.3.13', :platform => :ruby
-# gem 'jdbc-mysql',      '~> 5.1.28', :platform => :jruby
-# gem 'thinking-sphinx', '~> 3.1.3'
-# gem 'flying-sphinx',   '1.2.0'
+gem 'mysql2',          '~> 0.3.13', :platform => :ruby
+gem 'jdbc-mysql',      '~> 5.1.28', :platform => :jruby
+gem 'thinking-sphinx', '~> 3.1.3'
+gem 'flying-sphinx',   '1.2.0'
 gem 'joiner', '~> 0.3.4'
 gem 'figaro', '~> 1.1.1'
 gem "carrierwave"

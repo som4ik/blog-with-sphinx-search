@@ -11,7 +11,7 @@ Rails.application.configure do
            :authentication       => 'plain',
            :enable_starttls_auto => true  
         }
-  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.raise_delivery_errors = false
   # Code is not reloaded between requests.
   config.cache_classes = true
   # Eager load code on boot. This eager loads most of Rails and
