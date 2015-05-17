@@ -13,7 +13,7 @@ Devise.setup do |config|
   #sdsadas
   config.expire_all_remember_me_on_sign_out = true
   
-
+  
 
   config.stretches = Rails.env.test? ? 1 : 10
 

@@ -1,0 +1,10 @@
+development:
+  mysql41: 9312
+test:
+  mysql41: 9313
+production:
+  mysql41: 9312
+  pid_file: /path/to/app/shared/tmp/searchd.pid
+  indices_location: /path/to/app/shared/db/sphinx
+  configuration_file: /path/to/app/shared/production.sphinx.conf
+  binlog_path: /path/to/app/shared/binlog

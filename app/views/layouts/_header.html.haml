@@ -5,12 +5,18 @@
   #notice_wrapper
     %p.alert= alert
 %div.head
+
   = link_to "News Blog" ,posts_path ,:class =>"btn btn-link sitename"
   %ul.nav.navbar-nav.position
     -Category.all.each do |c| 
       %li= link_to c.name, posts_path(c)
+  
+  / .input-group
+  /   %input.form-control{:search,:placeholder => "Search for...", :type => "text",:method=:get}
+  /     %span.input-group-btn
+  /       %button.btn.btn-default{:type => "button"} Go!
 
-    
+  
   .head_bottons
     -if user_signed_in?
       = image_tag current_user.avatar_url ,:class=>"avatarnav"  
@@ -30,4 +36,9 @@
       .unsign
         = link_to 'New Post', new_post_path,:class=>"btn btn-default"
         = link_to 'Sing In', new_user_session_path, method: 'post',:class=>"btn btn-primary "
+  .search_box
+    = form_tag posts_path, :class => "navbar-search pull-left", :method => :get do
+
+      = text_field_tag :search, params[:search], :class => "form-control pull-left search", :placeholder => "Search"
+      %span.input-group-btn.width-fix.pull-right= submit_tag "Go", :name => nil,:class=>"btn btn-default"
 

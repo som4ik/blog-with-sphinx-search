@@ -65,7 +65,7 @@ margin-right: 20px;
 margin-top:5px; 
 }
 .position{
-	margin-left: 20%;
+	margin-left: 8%;
 }
 .sitename{
 	float: left;
@@ -157,6 +157,19 @@ word-wrap: break-word;
 	border-left: none;
 	border-right:none;
 	border-radius: none; 
+}
+.search_box{
+	width:240px;
+	float: right;
+	margin-top: 8px;
+margin-right: 7%;
+}
+.search {
+	width:auto;
+}
+.width-fix{
+	width: auto;
+	/*float: right;*/
 }
 /*.badge{
 	float: left;

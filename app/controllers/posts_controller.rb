@@ -7,16 +7,21 @@ class PostsController < ApplicationController
   def index
     if params[:format]
       @posts = Category.find(params[:format]).posts.where(:confirm =>true).order('created_at DESC').paginate(:page => params[:page], :per_page => 6)
+    elsif params[:search]
+      @posts = Post.search params[:search],:page => params[:page], :per_page => 6
     else
       @posts = Post.order('created_at DESC').where(:confirm =>true).paginate(:page => params[:page], :per_page => 6)
     end
+
     @categories = Category.all
   end
 
   # GET /posts/1
   # GET /posts/1.json
+
   def show
   end
+
   def confirm
     @users = User.where(:info_stop => true)
     @post[:confirm] = true
@@ -45,6 +50,8 @@ class PostsController < ApplicationController
   # GET /posts/1/edit
   def edit
   end
+
+  
 
   # POST /posts
   # POST /posts.json
@@ -99,4 +106,5 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(:title, :description, :body,:confirm,:ignore,:user_id,{category_ids:[]})
     end
+   
 end
