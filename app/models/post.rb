@@ -1,6 +1,6 @@
 class Post < ActiveRecord::Base
 belongs_to :user
- # after_save ThinkingSphinx::RealTime.callback_for(:post)
+  after_save ThinkingSphinx::RealTime.callback_for(:post)
 has_many :comments, :as => :commentable, :dependent => :destroy
 	validates :title, presence: true, length: { minimum: 5 }
 	validates :body, presence: true
