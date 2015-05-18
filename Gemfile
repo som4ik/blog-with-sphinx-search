@@ -17,6 +17,7 @@ gem 'haml', '~> 4.0.6'
 gem 'bootstrap-sass', '~> 3.3.4.1'
 gem 'ancestry', '~> 2.1.0'
 gem 'seed_dump', '~> 3.2.2'
+gem 'redis', '~> 3.2.1'
 #Tagging
 gem 'acts-as-taggable-on', '~> 3.5.0'
 # Use jquery as the JavaScript library
