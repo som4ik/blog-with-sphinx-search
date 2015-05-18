@@ -6,12 +6,13 @@ Rails.application.configure do
            :address              => 'smtp.sendgrid.net',
            :port                 => '587',
            :domain               => 'heroku.com',
-           :user_name            => 'app36846898@heroku.com',
-           :password             => '4dmmpyzg8146',
+           :user_name            => 'app36953615@heroku.com',
+           :password             => 'a8cthflo0078',
            :authentication       => 'plain',
            :enable_starttls_auto => true  
         }
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
+  Rails.application.routes.default_url_options[:host] = 'https://somartestingapp.herokuapp.com'
   # Code is not reloaded between requests.
   config.cache_classes = true
   # Eager load code on boot. This eager loads most of Rails and

@@ -1,7 +1,7 @@
 
 Devise.setup do |config|
   config.secret_key = 'a83b511317fc193607e4ef141233f7ea44341995d46fdc6c897dc6c78f58d351dcee88ed16a718ebf84f8fbc7b2a3647bf770a4d32f7a3d9a6f935935bd39cc4'
-  config.mailer_sender = 'somarmelhem5@hotmail.com'
+  config.mailer_sender = 'somarmelhem5@gmail.com'
 
   require 'devise/orm/active_record'
 
