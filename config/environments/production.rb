@@ -11,8 +11,9 @@ Rails.application.configure do
            :authentication       => 'plain',
            :enable_starttls_auto => true  
         }
-  config.action_mailer.raise_delivery_errors = true
-  Rails.application.routes.default_url_options[:host] = 'https://somartestingapp.herokuapp.com'
+  config.action_mailer.perform_deliveries = true
+config.action_mailer.raise_delivery_errors = false
+config.action_mailer.default :charset => "utf-8"
   # Code is not reloaded between requests.
   config.cache_classes = true
   # Eager load code on boot. This eager loads most of Rails and
@@ -88,3 +89,4 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 end
+
