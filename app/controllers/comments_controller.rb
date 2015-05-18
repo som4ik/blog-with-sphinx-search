@@ -7,9 +7,9 @@ def new
     @comment = Comment.new( :parent_id => @parent_id, 
                             :commentable_id => @commentable.id,
                             :commentable_type => @commentable.class.to_s)
-  end
+end
   
-  def create
+def create
     
     @user = current_user
     @commentable = find_commentable
@@ -25,20 +25,21 @@ def new
       
     end
     
-  end
+end
  
   private
  
-      def comment_params
-      params.require(:comment).permit(:commenter,:content,:parent_id, :commentable_id, :commentable_type,:user_id)
-    end
-     def find_commentable
-       params.each do |name, value|
-          if name =~ /(.+)_id$/
-           return $1.classify.constantize.find(value)
+def comment_params
+    params.require(:comment).permit(:commenter,:content,:parent_id, :commentable_id, :commentable_type,:user_id)
+end
+    
+def find_commentable
+    params.each do |name, value|
+      if name =~ /(.+)_id$/
+              return $1.classify.constantize.find(value)
           end
-       end
-       nil
-      end
+    end
+    nil
+end
 
 end

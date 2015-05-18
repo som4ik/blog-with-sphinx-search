@@ -1,4 +1,6 @@
 class Post < ActiveRecord::Base
+acts_as_taggable
+ActsAsTaggableOn::Tag.most_used(10)
 belongs_to :user
 after_save ThinkingSphinx::RealTime.callback_for(:post)
 has_many :comments, :as => :commentable, :dependent => :destroy

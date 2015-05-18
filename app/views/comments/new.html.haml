@@ -1,1 +1,4 @@
-= render 'form'
+- if user_signed_in?
+  = render 'comments/sign_in_form' 
+-else 
+  = render 'comments/not_sign_in_form'   

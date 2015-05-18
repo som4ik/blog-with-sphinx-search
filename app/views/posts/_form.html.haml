@@ -23,7 +23,11 @@
   .field
     = f.label :body
     %br/
-    = f.text_area :body , :class=>'redactor'
+    = f.text_area :body , :class=>'redactor' 
+  .field
+    = f.label :tag_list, "Tags :" 
+    %br/
+    = f.text_field :tag_list , placeholder: "Tags separated with comma",:class=>'form-control'
   %br/
   %br/
   %br/

@@ -1,0 +1,17 @@
+= form_for [@commentable, @comment] do |f|
+  = f.hidden_field :parent_id
+  %p.family
+    = f.label :name 
+    %br/
+    = f.text_field :commenter
+  %p.family
+    = f.label "Comment"
+    %br/
+    = f.text_area :content, :rows => 15
+  %p.family
+    -if @comment.parent
+      = f.submit "Reply",:class=>"btn btn-primary btn-xs"
+      |
+      = link_to "back",@commentable,:class=>"btn btn-default btn-xs"
+    -else 
+      = f.submit "Comment",:class=>"btn btn-primary btn-xs"

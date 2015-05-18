@@ -1,13 +1,5 @@
 
 = form_for [@commentable, @comment] do |f|
-  - if @comment.errors.any?
-    #error_explanation
-      %h4
-        = pluralize(@comment.errors.count, "error")
-        prohibited this post from being saved:
-      %ul
-        - @comment.errors.full_messages.each do |message|
-          %li= message
   = f.hidden_field :parent_id
   - if user_signed_in?
     = f.hidden_field :commenter ,:value=>"#{current_user.username}"

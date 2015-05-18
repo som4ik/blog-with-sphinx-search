@@ -17,6 +17,8 @@ gem 'haml', '~> 4.0.6'
 gem 'bootstrap-sass', '~> 3.3.4.1'
 gem 'ancestry', '~> 2.1.0'
 gem 'seed_dump', '~> 3.2.2'
+#Tagging
+gem 'acts-as-taggable-on', '~> 3.5.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks

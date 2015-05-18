@@ -1,20 +1,25 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy,:confirm,:ignore]
   before_action :authenticate_user!,except: [:index,:show]
+
   include Com::Commentable
+
+
   # GET /posts
   # GET /posts.json
   def index
     if params[:format]
-      @posts = Category.find(params[:format]).posts.where(:confirm =>true).order('created_at DESC').paginate(:page => params[:page], :per_page => 6)
+      for_categories
     elsif params[:search]
-      @posts = Post.search params[:search],:with => { :confirm=>true },:order=>"created_at DESC",:page => params[:page], :per_page => 6
+      for_search
+    elsif  params[:tag]
+      for_tags
     else
-      @posts = Post.order('created_at DESC').where(:confirm =>true).paginate(:page => params[:page], :per_page => 6)
+      for_allposts
     end
-
     @categories = Category.all
   end
+
 
   # GET /posts/1
   # GET /posts/1.json
@@ -31,17 +36,18 @@ class PostsController < ApplicationController
     @users.each do |u|
       if (u.category_ids&@post.category_ids)!=[]
         MailsWorker.perform_async(@post.id,u.id)
-        # UserMailer.new_post_email(@post,u).deliver
       end
     end
   redirect_to admin_posts_path
   end
+
   def ignore
     @post[:ignore] = true
     @post[:confirm] = false
     @post.save
     redirect_to admin_posts_path
   end
+  
   # GET /posts/new
   def new
     @post = Post.new
@@ -50,8 +56,6 @@ class PostsController < ApplicationController
   # GET /posts/1/edit
   def edit
   end
-
-  
 
   # POST /posts
   # POST /posts.json
@@ -104,7 +108,23 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :description, :body,:confirm,:ignore,:user_id,{category_ids:[]})
+      params.require(:post).permit(:title, :description, :body,:confirm,:ignore,:user_id,{category_ids:[]},:tag_list)
+    end
+
+    def for_categories
+        @posts = Category.find(params[:format]).posts.where(:confirm =>true).order('created_at DESC').paginate(:page => params[:page], :per_page => 6)
+    end
+
+    def for_search
+        @posts = Post.search params[:search],:with => { :confirm=>true },:order=>"created_at DESC",:page => params[:page], :per_page => 6
+    end
+
+    def for_tags
+        @posts = Post.tagged_with(params[:tag]).where(:confirm =>true).paginate(:page => params[:page], :per_page => 6)
+    end
+
+    def for_allposts
+        @posts = Post.order('created_at DESC').where(:confirm =>true).paginate(:page => params[:page], :per_page => 6)
     end
    
 end

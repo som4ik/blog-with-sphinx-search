@@ -10,6 +10,8 @@
           Posted by 
           = link_to post.user.username,user_path(post.user[:id])
           = time_ago_in_words(post.created_at)
+          
+          = raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ')
       .col-md-2
         -if post.comments.count != 0
           .comtext

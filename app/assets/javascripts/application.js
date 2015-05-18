@@ -27,7 +27,7 @@
     $('#notice_wrapper').fadeOut("slow",function(){
         $(this).remove();
             })
-                },1500)
+                                 },1500)
 
 
             });

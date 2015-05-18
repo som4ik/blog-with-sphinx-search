@@ -1,0 +1,6 @@
+#tag_cloud
+  %ul.tags
+    %li Top Tags:
+    - tag_cloud Post.tag_counts, %w{s m l} do |tag, css|
+      %li= link_to tag.name, tag_path(tag.name), class: css
+     
