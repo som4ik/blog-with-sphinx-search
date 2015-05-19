@@ -12,13 +12,9 @@ Installation
 After clone the reprisotory and preparing your enviroment "sidekiq,sphinx" ,you need to enter the app root and write this command :
 
 
-            $ bundle
-
-
-			$ rake dbcreate 
-			
+  $ bundle
+        $ rake dbcreate 
 			$ rake db:migrate 
-			
 			$ rake db:seed 
 			$ rake ts:regenerate #this for create sphinx real-time indexing 
 			$ bundle exec sidekiq -q default -q mailers #recommended
