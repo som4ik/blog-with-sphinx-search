@@ -1,34 +1,38 @@
 News Blog
-==============
+
 Simple news blog which have (Posts,Users & profile for each user,AdminUser's,Categories,tags,mails support and also search engine "Thinking-sphinx",sidekiq mails async)
 You can have a lock to the app on :
-Heroku link
+https://somartestingapp.herokuapp.com/
 
 
 Installation
------------------
+
   Development:
-  ---------------
+  
   	After clone the reprisotory and preparing your enviroment   you need to enter the app root and write this command :
+-------------------------- 		
   		$ bundle
-  		rake db:create 
-  		rake db:migrate 
-  		rake db:seed 
-  		rake ts:regenerate #this for create sphinx real-time indexing 
-  		bundle exec sidekiq -q default -q mailers
-  		rails s 
-  	"Enjoy"
-    - Product
-    after pushing the app to heroku 
-    	$ heroku run bundle exec flying-sphinx #also for real-time indexing 
+  		$ rake db:create 
+  		$ rake db:migrate 
+  		$ rake db:seed 
+  		$ rake ts:regenerate #this for create sphinx real-time indexing 
+  		$ bundle exec sidekiq -q default -q mailers
+  		$ rails s 
+
+"Enjoy"
+  
+  Product
+    After pushing the app to heroku ,prepare heroku addon for "Sidekiq,sphinx,mails" do :
+---------------------------    
+    	$ heroku run bundle exec flying-sphinx regenerate    # for real-time indexing 
 
 
 Problems?
------------------
+
  In Production "Heroku",Sidekiq doesnt send any mails 
  it seams the problem in the Procfile "for me this is really Bug"
 
 
 Author
------------------
+
 Somar Melhem
