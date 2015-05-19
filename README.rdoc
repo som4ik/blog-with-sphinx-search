@@ -19,7 +19,7 @@ After clone the reprisotory and preparing your enviroment "sidekiq,sphinx"you ne
 		$ bundle exec sidekiq -q default -q mailers #recommended
 		$ rails s 
 
-  
+----------------------- 
 * Product
 
 After pushing the app to heroku ,prepare heroku addon for "Sidekiq,sphinx,mails" do :
