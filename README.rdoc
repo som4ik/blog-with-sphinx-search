@@ -1,12 +1,14 @@
-News Blog
+==News Blog
 
 Simple news blog which have (Posts,Users & profile for each user,AdminUser's,Categories,tags,mails support and also search engine "Thinking-sphinx",sidekiq mails async)
 You can have a lock to the app on :
 https://somartestingapp.herokuapp.com/
 
 
-Installation
-
+==Installation
+Admin: 
+ E-mail    : admin@example.com
+ Password  : password
 * Development
 
 After clone the reprisotory and preparing your enviroment "sidekiq,sphinx" ,you need to enter the app root and write this command :
