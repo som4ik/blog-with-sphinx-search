@@ -10,10 +10,10 @@ Devise.setup do |config|
   config.strip_whitespace_keys = [ :email ]
 
   config.skip_session_storage = [:http_auth]
-  #sdsadas
+  
   config.expire_all_remember_me_on_sign_out = true
   
-  
+  config.mailer = "DeviseBackgrounder"
 
   config.stretches = Rails.env.test? ? 1 : 10
 

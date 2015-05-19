@@ -5,7 +5,7 @@
     %br
     %h4.media-heading Name : #{@user.username} 
     %h5 E-Mail : #{@user.email}
-    %h5 joind the news blog #{time_ago_in_words(@user.created_at.time)} ago    
+    
     -if @user.categories!=[]
       %h5 Intersted in :
       -@user.categories.each do |category|

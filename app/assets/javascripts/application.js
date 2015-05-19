@@ -17,7 +17,10 @@
 //= require bootstrap-sprockets
 //= require_tree .
  $(document).ready(function(){
+$('#tags_cloud,p').click(function() {
+$('.tags').toggle("slow");
 
+});
  $('html').click(function(){
  	$('#notice_wrapper').fadeOut("slow");});
 //the upper code added that sometimes when call methodes not reloading page the notice stack 

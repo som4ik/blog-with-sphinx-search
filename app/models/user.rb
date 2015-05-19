@@ -35,7 +35,7 @@ end
 
 
   def welcome_message
-     UserMailer.welcome_email(self).deliver
+     UserMailer.welcome_email(self).deliver_now
   end
 
 end
