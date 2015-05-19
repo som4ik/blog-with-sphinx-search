@@ -168,7 +168,7 @@ body {
 	border-radius: none; 
 }
 .search_box{
-	width:240px;
+	width:315px;
 	float: right;
 	margin-top: 9px;
 	margin-right: 7%;
@@ -208,4 +208,23 @@ body {
 	-webkit-border-radius:5px;
 	border: 0px solid #000000;
 	border-radius: 5px;
+}
+.tags_toggle {
+	float: left;
+	margin-right: 5px;
+  background: #3498db;
+  border: none;
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 11px;
+  padding: 10px 10px 10px 10px;
+  text-decoration: none;
+}
+
+.tags_toggle:hover {
+  background: #533566;
+  text-decoration: none;
 }
