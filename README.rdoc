@@ -10,7 +10,6 @@ Installation
 * Development
   
 After clone the reprisotory and preparing your enviroment   you need to enter the app root and write this command :
-		
 		$ bundle
 
 		$ rake db:create 
@@ -25,7 +24,6 @@ After clone the reprisotory and preparing your enviroment   you need to enter th
 		
 		$ rails s 
 
-"Enjoy"
   
 * Product
 
