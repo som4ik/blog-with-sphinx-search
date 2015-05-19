@@ -1,2 +1,3 @@
-web: bundle exec unicorn -p $PORT -e $RACK_ENV   
-worker: bundle exec sidekiq                   
+web: bundle exec thin start -R config.ru -e $RAILS_ENV -p $PORT
+worker:  bundle exec rake jobs:work
+sidekiq: bundle exec sidekiq -c 5 -v
