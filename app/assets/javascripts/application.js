@@ -17,18 +17,11 @@
 //= require bootstrap-sprockets
 //= require_tree .
  $(document).ready(function(){
-$('.tags_toggle').click(function() {
-$('.tags').toggle("slow", function() {
-    // Animation complete.
-  });
 
-});
  $('html').click(function(){
  	$('#notice_wrapper').fadeOut("slow");
 
  });
-//the upper code added that sometimes when call methodes not reloading page the notice stack 
-// so it removes by click on the page :p
 
  setTimeout(function(){
     $('#notice_wrapper').fadeOut("slow",function(){

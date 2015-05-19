@@ -27,12 +27,12 @@ After pushing the app to heroku ,prepare heroku addon for "Sidekiq,sphinx,mails"
     	$ heroku run bundle exec flying-sphinx regenerate    # for real-time indexing 
 
 
-Problems?
+==Problems?
 
 In Production "Heroku",Sidekiq doesnt send any mails 
 it seams the problem in the Procfile "for me this is really Bug"
 
 
-Author
+==Author
 
 Somar Melhem
