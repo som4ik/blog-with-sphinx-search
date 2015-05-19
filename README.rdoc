@@ -10,7 +10,8 @@ Installation
 * Development
   
 After clone the reprisotory and preparing your enviroment "sidekiq,sphinx"you need to enter the app root and write this command :
-		$ bundle 
+-----------------------
+		$ bundle
 		$ rake db:create 
 		$ rake db:migrate 
 		$ rake db:seed 
