@@ -1,6 +1,6 @@
 
 # Change these
-server '178.62.18.237', roles: [:web, :app, :db], primary: true
+server '46.101.63.199', roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'git@github.com:som4ik/news_blog_final.git'
 set :application,     'SomarNewsBlog'

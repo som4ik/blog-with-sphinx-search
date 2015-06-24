@@ -5,6 +5,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.1'
 # Use postgresql as the database for Active Record
 gem 'pg'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -29,7 +30,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'redactor-rails', '~>0.4.5'
 gem 'sidekiq', '~> 3.3.4'
 #Sphinx 
-gem 'mysql2',          '~> 0.3.13', :platform => :ruby
+gem 'mysql2',          '~> 0.3.18', :platform => :ruby
 gem 'jdbc-mysql',      '~> 5.1.28', :platform => :jruby
 gem 'thinking-sphinx', '~> 3.1.3'
 gem 'flying-sphinx',   '1.2.0'
