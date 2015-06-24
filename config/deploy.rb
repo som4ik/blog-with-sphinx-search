@@ -2,7 +2,7 @@
 # Change these
 server '46.101.63.199', roles: [:web, :app, :db], primary: true
 
-set :repo_url,        'git@github.com:som4ik/news_blog_final.git'
+set :repo_url,        'https://github.com/som4ik/news_blog_final.git'
 set :application,     'SomarNewsBlog'
 set :user,            'root'
 set :puma_threads,    [4, 16]
