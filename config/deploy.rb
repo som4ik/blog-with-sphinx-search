@@ -1,6 +1,6 @@
 
 # Change these
-server '178.62.18.237', port: 8080, roles: [:web, :app, :db], primary: true
+server '178.62.18.237', roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'git@github.com:som4ik/news_blog_final.git'
 set :application,     'SomarNewsBlog'
